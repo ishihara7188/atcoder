@@ -1,3 +1,6 @@
+#B - Christmas Eve Eve
+#https://atcoder.jp/contests/abc115/tasks/abc115_b
+
 N = gets.strip.to_i
 p =  (0...N).map{gets.strip.to_i}
 
