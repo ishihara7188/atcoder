@@ -1,13 +1,12 @@
 #B - Christmas Eve Eve
 #https://atcoder.jp/contests/abc115/tasks/abc115_b
 
-
 n = gets.to _i
-p = n.times.map {|i| gets.to _i }
+p = n.times.map {|i| gets.to_i }
 puts p.inject(:+) - p.max / 2
 
-N = gets.strip.to_i
-p =  (0...N).map{gets.strip.to_i}
+# N = gets.strip.to_i
+# p =  (0...N).map{gets.strip.to_i}
 
 # pmax = p.max.floor
 
