@@ -4,9 +4,6 @@ B = (0...M).map{gets.strip}
 
 # p N,M,A,B
 
-
-
-
 (N - M + 1).times{|row|
 	(N - M + 1).times{|column|
 		matched = true
