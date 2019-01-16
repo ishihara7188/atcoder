@@ -1,43 +1,34 @@
-# Your code here!
+# https://atcoder.jp/contests/abc107/tasks/abc107_b
+# B - Grid Compression
 
 N, M = gets.split(" ").map{|d|d.to_i}
-A = (0...N).map{gets.strip}
+A = (0...N).map{gets.strip.split("")}
 
-# p N,M,A,B
-
-(N - M + 1).times{|row|
-	(N - M + 1).times{|column|
-		matched = true
-		M.times{|y|
-			M.times{|x|
-
-# p "y=#{y} x=#{x}"
-
-if(x == 0 && A[row + y][column + x] == ".")
-p A[row + y].split("").all?{|d|d == "."}
-#    p (A[row + y]).select{|d|d == "."}
-end
-
-if(y == 0 && A[row + y][column + x] == ".")
-p A[row + y].split("").all?{|d|d == "."}
-#    p (A[row + y]).select{|d|d == "."}
-end
+ignorex = []
+ignorey = []
 
 
-#p "A=#{A[row + y][column + x]}"
-
-# p "A=#{A[row + y][column + x]} B=#{B[y][x]}"
-
-#				if A[row + y][column + x] != B[y][x]
-#					matched = false
-#				end
-			}
-		}
-		if matched
-			puts "Yes"
-			exit
-		end
-	}
+A.size.times{|y|
+	if(A[y].all?{|d|d == "."}  )
+		ignorey.push(y)
+	end
 }
 
-puts "No"
+A.transpose.size.times{|x|
+	if(A.transpose[x].all?{|d|d == "."}  )
+		ignorex.push(x)
+	end
+}
+
+out = ""
+A.size.times{|y|
+	A.transpose.size.times{|x|
+		if(!ignorey.include?(y) && !ignorex.include?(x))
+			out += "#{A[y][x]}"
+		end
+	}
+	if(!ignorey.include?(y))
+		out += "\n"
+	end
+}
+puts out
