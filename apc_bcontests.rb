@@ -6,3 +6,5 @@ p ([p.select{|i| i <= a }.size ,p.select{|i| a < i && b >= i }.size ,p.select{|i
 
 # aaaa
 # whats!?
+
+a = 1 + 1
